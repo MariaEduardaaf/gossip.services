@@ -4,12 +4,7 @@ export default defineNuxtConfig({
   
   modules: [
     '@nuxt/content',
-    '@nuxt/image',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
-    'nuxt-schema-org'
+    '@nuxtjs/tailwindcss'
   ],
 
   // TypeScript configuration
@@ -57,36 +52,6 @@ export default defineNuxtConfig({
     }
   },
 
-  // Image optimization
-  image: {
-    quality: 80,
-    format: ['webp', 'jpg'],
-    screens: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536
-    }
-  },
-
-  // Sitemap configuration
-  sitemap: {
-    hostname: process.env.SITE_URL || 'https://seu-dominio.com',
-    gzip: true
-  },
-
-  // Robots configuration
-  robots: {
-    groups: [
-      {
-        userAgent: '*',
-        allow: '/',
-        sitemap: `${process.env.SITE_URL || 'https://seu-dominio.com'}/sitemap.xml`
-      }
-    ]
-  },
 
   // CSS configuration
   css: ['~/assets/css/main.css'],
@@ -96,10 +61,4 @@ export default defineNuxtConfig({
     transpile: ['dayjs']
   },
 
-  // Nitro configuration for static generation
-  nitro: {
-    prerender: {
-      routes: ['/rss.xml']
-    }
-  }
 })
